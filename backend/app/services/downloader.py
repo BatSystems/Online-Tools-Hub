@@ -22,6 +22,10 @@ class VideoDownloader:
             'format': 'best',
             'outtmpl': str(TEMP_DIR / '%(title)s-%(id)s.%(ext)s'),
             'noplaylist': True,
+            'ignoreerrors': True,
+            'no_check_certificate': True,
+            'skip_download': False,
+            'cookiesfrombrowser': ('chrome',),  # Try to use cookies from Chrome browser
         }
     
     async def download_youtube(self, url: str, format: str = "mp4") -> Dict[str, Any]:
