@@ -11,10 +11,17 @@ import InstagramDownloader from './pages/InstagramDownloader'
 import TwitterDownloader from './pages/TwitterDownloader'
 import RedditDownloader from './pages/RedditDownloader'
 import PinterestDownloader from './pages/PinterestDownloader'
+import URLShortener from './pages/URLShortener'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
+
+// Admin pages
+import AdminLogin from './pages/admin/Login'
+import AdminDashboard from './pages/admin/Dashboard'
+import AdminMessages from './pages/admin/Messages'
+import AdminCookies from './pages/admin/Cookies'
 
 import './index.css'
 
@@ -24,6 +31,7 @@ function App() {
       <LanguageProvider>
         <Router>
           <Routes>
+            {/* Main site routes */}
             <Route element={<Layout />}>
               <Route path="/" element={<HomePage />} />
               <Route path="/youtube-downloader" element={<YouTubeDownloader />} />
@@ -33,11 +41,18 @@ function App() {
               <Route path="/twitter-downloader" element={<TwitterDownloader />} />
               <Route path="/reddit-downloader" element={<RedditDownloader />} />
               <Route path="/pinterest-downloader" element={<PinterestDownloader />} />
+              <Route path="/url-shortener" element={<URLShortener />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Route>
+            
+            {/* Admin routes */}
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/messages" element={<AdminMessages />} />
+            <Route path="/admin/cookies" element={<AdminCookies />} />
           </Routes>
         </Router>
       </LanguageProvider>

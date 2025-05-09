@@ -7,7 +7,8 @@ import os
 import tempfile
 from pathlib import Path
 
-from .routers import downloads, language
+from .routers import downloads, language, contact, url
+from .routers.admin import auth as admin_auth, contact as admin_contact, cookies as admin_cookies
 
 app = FastAPI(
     title="Online Tools Hub API",
@@ -27,8 +28,20 @@ app.add_middleware(
 TEMP_DIR = Path(tempfile.gettempdir()) / "online_tools_hub_downloads"
 TEMP_DIR.mkdir(exist_ok=True)
 
+# Data directories
+DATA_DIR = Path("./data")
+DATA_DIR.mkdir(exist_ok=True)
+
+# Include routers
 app.include_router(downloads.router)
 app.include_router(language.router)
+app.include_router(contact.router)
+app.include_router(url.router)
+
+# Admin routers
+app.include_router(admin_auth.router)
+app.include_router(admin_contact.router)
+app.include_router(admin_cookies.router)
 
 @app.get("/healthz")
 async def healthz():
@@ -48,7 +61,14 @@ async def root():
             "reddit": "/api/download/reddit",
             "pinterest": "/api/download/pinterest",
             "language": "/api/language",
-            "language_detect": "/api/language/detect"
+            "language_detect": "/api/language/detect",
+            "contact": "/api/contact",
+            "url_shortener": "/api/url/shorten",
+            "admin": {
+                "login": "/api/admin/login",
+                "contact": "/api/admin/contact/messages",
+                "cookies": "/api/admin/cookies"
+            }
         }
     }
 
