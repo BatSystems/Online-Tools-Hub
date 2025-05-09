@@ -17,7 +17,7 @@ const InstagramDownloader: React.FC = () => {
       <VideoDownloader
         title={t('tools.instagram.title')}
         description={t('tools.instagram.description')}
-        endpoint="/api/downloads/instagram"
+        endpoint="/api/download/instagram"
       />
     </>
   );

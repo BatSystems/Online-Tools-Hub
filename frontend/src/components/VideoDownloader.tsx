@@ -23,7 +23,7 @@ const VideoDownloader: React.FC<VideoDownloaderProps> = ({
   const [result, setResult] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   
-  const apiUrl = 'http://localhost:8000';
+  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
   
   const handlePaste = async () => {
     try {

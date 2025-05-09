@@ -22,7 +22,7 @@ const YouTubeDownloader: React.FC = () => {
       <VideoDownloader
         title={t('tools.youtube.title')}
         description={t('tools.youtube.description')}
-        endpoint="/api/downloads/youtube"
+        endpoint="/api/download/youtube"
         formats={formats}
       />
     </>

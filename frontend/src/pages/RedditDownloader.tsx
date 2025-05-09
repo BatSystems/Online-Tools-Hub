@@ -17,7 +17,7 @@ const RedditDownloader: React.FC = () => {
       <VideoDownloader
         title={t('tools.reddit.title')}
         description={t('tools.reddit.description')}
-        endpoint="/api/downloads/reddit"
+        endpoint="/api/download/reddit"
       />
     </>
   );

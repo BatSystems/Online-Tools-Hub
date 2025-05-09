@@ -17,7 +17,7 @@ const TikTokDownloader: React.FC = () => {
       <VideoDownloader
         title={t('tools.tiktok.title')}
         description={t('tools.tiktok.description')}
-        endpoint="/api/downloads/tiktok"
+        endpoint="/api/download/tiktok"
       />
     </>
   );

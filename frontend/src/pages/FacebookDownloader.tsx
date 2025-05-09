@@ -17,7 +17,7 @@ const FacebookDownloader: React.FC = () => {
       <VideoDownloader
         title={t('tools.facebook.title')}
         description={t('tools.facebook.description')}
-        endpoint="/api/downloads/facebook"
+        endpoint="/api/download/facebook"
       />
     </>
   );

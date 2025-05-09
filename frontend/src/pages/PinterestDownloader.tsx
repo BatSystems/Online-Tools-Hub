@@ -17,7 +17,7 @@ const PinterestDownloader: React.FC = () => {
       <VideoDownloader
         title={t('tools.pinterest.title')}
         description={t('tools.pinterest.description')}
-        endpoint="/api/downloads/pinterest"
+        endpoint="/api/download/pinterest"
       />
     </>
   );

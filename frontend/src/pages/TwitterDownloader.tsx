@@ -17,7 +17,7 @@ const TwitterDownloader: React.FC = () => {
       <VideoDownloader
         title={t('tools.twitter.title')}
         description={t('tools.twitter.description')}
-        endpoint="/api/downloads/twitter"
+        endpoint="/api/download/twitter"
       />
     </>
   );
